@@ -1,0 +1,17 @@
+form{
+    border: 2px thick double;
+   border-radius: 2mm;
+   background-color: blue;
+   width: 30%;
+   color: beige;
+   padding: 5mm;
+}
+input{
+    border-radius: 1mm;
+    color: blue;
+}
+table{
+    border: 2px blue double thick;
+    border-radius: 2mm;
+    padding: 2mm;
+}

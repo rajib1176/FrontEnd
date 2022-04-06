@@ -8,12 +8,12 @@ import { BookingService } from '../service/booking.service';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
- booking:Booking[]=[]
+ private booking:Booking[]=[]
   constructor(private service:BookingService) {
     this.loadBooking();
    }
    loadBooking() {
-    this.service.addBooking(booking:Booking[]).subscribe(success => this.booking = success);
+    this.service.addBooking(this.booking).subscribe(success => this.booking = success);
    }
 
   ngOnInit(): void {

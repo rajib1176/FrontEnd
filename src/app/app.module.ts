@@ -7,6 +7,19 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BookingComponent } from './booking/booking.component';
 import { MenuComponent } from './menu/menu.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthguardService } from './authguard.service';
+
+const routes : Routes=[
+  {path:"login",component:LoginComponent},
+  {path:"booking",component:BookingComponent, canActivate:[AuthguardService]},
+  {path:"",component:HomeComponent},
+  {path:"home",redirectTo:""},
+  
+];
+
 
 @NgModule({
   declarations: [
@@ -18,7 +31,9 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
